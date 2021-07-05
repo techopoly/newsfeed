@@ -24,7 +24,7 @@ router.post('/createPost', isAuth, [
         })
 ], post_C.createPostController);
 
-router.post('/editPost',isAuth, [
+router.post('/editPost', isAuth, [
     body('post_content')
         .trim()
         .isLength({

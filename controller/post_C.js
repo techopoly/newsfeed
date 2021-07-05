@@ -58,7 +58,7 @@ const getSinglePost = async (req, res, next) => {
         })
     }
     res.status(200).json({
-        message: 'successfully fetched single product',
+        message: 'successfully fetched single',
         data: result
     })
 }
