@@ -9,12 +9,12 @@ import { required, length } from '../../../util/validators';
 import { generateBase64FromImage } from '../../../util/image';
 
 const POST_FORM = {
-  title: {
-    value: '',
-    valid: false,
-    touched: false,
-    validators: [required, length({ min: 5 })]
-  },
+  // title: {
+  //   value: '',
+  //   valid: false,
+  //   touched: false,
+  //   validators: [required, length({ min: 5 })]
+  // },
   image: {
     value: '',
     valid: false,
@@ -44,11 +44,11 @@ class FeedEdit extends Component {
       prevProps.selectedPost !== this.props.selectedPost
     ) {
       const postForm = {
-        title: {
-          ...prevState.postForm.title,
-          value: this.props.selectedPost.title,
-          valid: true
-        },
+        // title: {
+        //   ...prevState.postForm.title,
+        //   value: this.props.selectedPost.title,
+        //   valid: true
+        // },
         image: {
           ...prevState.postForm.image,
           value: this.props.selectedPost.imagePath,
@@ -122,7 +122,7 @@ class FeedEdit extends Component {
 
   acceptPostChangeHandler = () => {
     const post = {
-      title: this.state.postForm.title.value,
+      // title: this.state.postForm.title.value,
       image: this.state.postForm.image.value,
       content: this.state.postForm.content.value
     };
@@ -146,16 +146,6 @@ class FeedEdit extends Component {
           isLoading={this.props.loading}
         >
           <form>
-            <Input
-              id="title"
-              label="Title"
-              control="input"
-              onChange={this.postInputChangeHandler}
-              onBlur={this.inputBlurHandler.bind(this, 'title')}
-              valid={this.state.postForm['title'].valid}
-              touched={this.state.postForm['title'].touched}
-              value={this.state.postForm['title'].value}
-            />
             <FilePicker
               id="image"
               label="Image"
